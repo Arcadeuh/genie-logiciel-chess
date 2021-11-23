@@ -2,7 +2,9 @@ package com.nullprogram.chess;
 
 import com.nullprogram.chess.ai.Minimax;
 import com.nullprogram.chess.boards.StandardBoard;
-import com.nullprogram.chess.gui.BoardPanel;
+import com.nullprogram.chess.gui.BoardController;
+import com.nullprogram.chess.gui.BoardView;
+
 import java.util.logging.Logger;
 import javax.swing.JApplet;
 import javax.swing.JOptionPane;
@@ -37,12 +39,13 @@ public final class ChessApplet extends JApplet implements GameListener {
         }
 
         StandardBoard board = new StandardBoard();
-        BoardPanel panel = new BoardPanel(board);
+        BoardView panel = new BoardView(board);
         add(panel);
         Game game = new Game(board);
-        game.seat(panel, new Minimax(game));
+        BoardController boardController = panel.getBoardController();
+        game.seat(boardController, new Minimax(game));
         game.addGameListener(this);
-        game.addGameListener(panel);
+        game.addGameListener(boardController);
         game.begin();
     }
 

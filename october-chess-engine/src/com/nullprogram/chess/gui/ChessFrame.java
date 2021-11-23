@@ -31,7 +31,10 @@ public class ChessFrame extends JFrame
     private static final long serialVersionUID = 1L;
 
     /** The board display. */
-    private final BoardPanel display;
+    private final BoardView display;
+    
+    /** The board controller. */
+    private final BoardController panelController;
 
     /** The progress bar on the display. */
     private final StatusBar progress;
@@ -43,7 +46,7 @@ public class ChessFrame extends JFrame
      * Create a new ChessFrame for the given board.
      */
     public ChessFrame() {
-        super(Chess.getTitle());
+        super("V1.0");
         setResizable(true);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -53,7 +56,9 @@ public class ChessFrame extends JFrame
         MenuHandler handler = new MenuHandler(this);
         handler.setUpMenu();
 
-        display = new BoardPanel(new EmptyBoard());
+        Board emptyBoard = new EmptyBoard();
+        display = new BoardView(emptyBoard);
+        panelController = display.getBoardController();
         progress = new StatusBar(null);
         add(display);
         add(progress);
@@ -79,13 +84,13 @@ public class ChessFrame extends JFrame
         }
         game = newGame;
         Board board = game.getBoard();
-        display.setBoard(board);
+        panelController.setBoard(board);
         display.invalidate();
         setSize(getPreferredSize());
 
         progress.setGame(game);
         game.addGameListener(this);
-        game.addGameListener(display);
+        game.addGameListener(panelController);
         game.begin();
     }
 
@@ -95,7 +100,7 @@ public class ChessFrame extends JFrame
      * @return the player
      */
     public final Player getPlayer() {
-        return display;
+        return panelController;
     }
 
     /**
