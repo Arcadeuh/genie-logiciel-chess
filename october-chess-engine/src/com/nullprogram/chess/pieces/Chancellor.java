@@ -2,6 +2,7 @@ package com.nullprogram.chess.pieces;
 
 import com.nullprogram.chess.MoveList;
 import com.nullprogram.chess.Piece;
+import com.nullprogram.chess.Side;
 
 /**
  * The Chess chancellor.

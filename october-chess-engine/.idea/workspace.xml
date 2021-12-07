@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a86cecfc-7daa-46a8-9ac9-b35fd5517e22" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/bin/com/nullprogram/chess/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/nullprogram/chess/Board.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/nullprogram/chess/ChessApplet.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/nullprogram/chess/ChessApplet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/nullprogram/chess/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/nullprogram/chess/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/nullprogram/chess/Move.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/nullprogram/chess/Move.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/nullprogram/chess/MoveList.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/nullprogram/chess/MoveList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/nullprogram/chess/Piece.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/nullprogram/chess/Piece.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/nullprogram/chess/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/nullprogram/chess/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/nullprogram/chess/ai/Minimax$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/nullprogram/chess/ai/Minimax$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/nullprogram/chess/ai/Minimax.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/nullprogram/chess/ai/Minimax.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/nullprogram/chess/ai/OptimizeGA.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/nullprogram/chess/ai/OptimizeGA.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/nullprogram/chess/boards/Gothic.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/nullprogram/chess/boards/Gothic.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/nullprogram/chess/boards/StandardBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/nullprogram/chess/boards/StandardBoard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/nullprogram/chess/gui/BoardPanel$Mode.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/nullprogram/chess/gui/BoardPanel$Mode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/nullprogram/chess/gui/BoardPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/nullprogram/chess/gui/BoardPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/nullprogram/chess/gui/ChessFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/nullprogram/chess/gui/ChessFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/nullprogram/chess/pieces/Archbishop.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/nullprogram/chess/pieces/Archbishop.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/nullprogram/chess/pieces/Bishop.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/nullprogram/chess/pieces/Bishop.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/nullprogram/chess/pieces/Chancellor.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/nullprogram/chess/pieces/Chancellor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/nullprogram/chess/pieces/King.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/nullprogram/chess/pieces/King.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/nullprogram/chess/pieces/Knight.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/nullprogram/chess/pieces/Knight.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/nullprogram/chess/pieces/Pawn.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/nullprogram/chess/pieces/Pawn.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/nullprogram/chess/pieces/PieceFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/nullprogram/chess/pieces/PieceFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/nullprogram/chess/pieces/Queen.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/nullprogram/chess/pieces/Queen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/com/nullprogram/chess/pieces/Rook.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/com/nullprogram/chess/pieces/Rook.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/nullprogram/chess/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/nullprogram/chess/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/nullprogram/chess/ChessApplet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/nullprogram/chess/ChessApplet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/nullprogram/chess/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/nullprogram/chess/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/nullprogram/chess/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/nullprogram/chess/Move.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/nullprogram/chess/Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/nullprogram/chess/Piece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/nullprogram/chess/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/nullprogram/chess/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/nullprogram/chess/ai/Minimax.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/nullprogram/chess/ai/Minimax.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/nullprogram/chess/ai/OptimizeGA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/nullprogram/chess/ai/OptimizeGA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/nullprogram/chess/boards/Gothic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/nullprogram/chess/boards/Gothic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/nullprogram/chess/boards/StandardBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/nullprogram/chess/boards/StandardBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/nullprogram/chess/gui/BoardPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/nullprogram/chess/gui/BoardPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/nullprogram/chess/gui/ChessFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/nullprogram/chess/gui/ChessFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/nullprogram/chess/pieces/Archbishop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/nullprogram/chess/pieces/Archbishop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/nullprogram/chess/pieces/Bishop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/nullprogram/chess/pieces/Bishop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/nullprogram/chess/pieces/Chancellor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/nullprogram/chess/pieces/Chancellor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/nullprogram/chess/pieces/King.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/nullprogram/chess/pieces/King.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/nullprogram/chess/pieces/Knight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/nullprogram/chess/pieces/Knight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/nullprogram/chess/pieces/Pawn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/nullprogram/chess/pieces/Pawn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/nullprogram/chess/pieces/PieceFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/nullprogram/chess/pieces/PieceFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/nullprogram/chess/pieces/Queen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/nullprogram/chess/pieces/Queen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/nullprogram/chess/pieces/Rook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/nullprogram/chess/pieces/Rook.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="21CAt8M9Vm2WnDPGVqolH4nxJw6" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a86cecfc-7daa-46a8-9ac9-b35fd5517e22" name="Changes" comment="" />
+      <created>1637434911628</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1637434911628</updated>
+      <workItem from="1637434913383" duration="710000" />
+      <workItem from="1637698503285" duration="76000" />
+      <workItem from="1637698595628" duration="785000" />
+      <workItem from="1637864233673" duration="1401000" />
+      <workItem from="1637865746657" duration="1215000" />
+      <workItem from="1637866989091" duration="370000" />
+      <workItem from="1638309164350" duration="602000" />
+      <workItem from="1638830273096" duration="618000" />
+      <workItem from="1638830906049" duration="421000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/nullprogram/chess/Move.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

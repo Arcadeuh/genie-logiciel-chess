@@ -1,6 +1,7 @@
 package com.nullprogram.chess.gui;
 
 import com.nullprogram.chess.Board;
+import com.nullprogram.chess.Side;
 import com.nullprogram.chess.GameEvent;
 import com.nullprogram.chess.GameListener;
 import com.nullprogram.chess.Move;
@@ -101,7 +102,7 @@ public class BoardPanel extends JComponent
     private Mode mode = Mode.WAIT;
 
     /** Current player making a move, when interactive. */
-    private Piece.Side side;
+    private Side side;
 
     /** Latch to hold down the Game thread while the user makes a selection. */
     private CountDownLatch latch;
@@ -348,7 +349,7 @@ public class BoardPanel extends JComponent
 
     @Override
     public final Move takeTurn(final Board turnBoard,
-                               final Piece.Side currentSide) {
+                               final Side currentSide) {
         latch = new CountDownLatch(1);
         board = turnBoard;
         side = currentSide;

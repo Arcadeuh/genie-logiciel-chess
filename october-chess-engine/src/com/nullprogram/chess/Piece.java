@@ -36,42 +36,6 @@ public abstract class Piece implements Serializable {
     /** Name of this piece. */
     private String name;
 
-    /**
-     * The side of the piece: white or black.
-     */
-    public enum Side {
-        /**
-         * The lighter colored side of the board.
-         */
-        WHITE (1),
-        /**
-         * The darker colored side of the board.
-         */
-        BLACK (-1);
-
-        /**
-         * Multiplier value of this side.
-         */
-        private int value;
-
-        /**
-         * Create a new side with given value.
-         *
-         * @param val value of this side
-         */
-        private Side(final int val) {
-            value = val;
-        }
-
-        /**
-         * Get the value of the side.
-         *
-         * @return value of the side
-         */
-        public int value() {
-            return value;
-        }
-    }
 
     /**
      * When creating a piece, you must always choose a side.

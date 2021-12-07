@@ -1,6 +1,7 @@
 package com.nullprogram.chess.pieces;
 
 import com.nullprogram.chess.Piece;
+import com.nullprogram.chess.Side;
 
 /**
  * Creates pieces based on their name strings.
@@ -18,7 +19,7 @@ public final class PieceFactory {
      * @param side side for the new piece
      * @return the new piece
      */
-    public static Piece create(final String name, final Piece.Side side) {
+    public static Piece create(final String name, final Side side) {
         if ("Queen".equals(name)) {
             return new Queen(side);
         } else {

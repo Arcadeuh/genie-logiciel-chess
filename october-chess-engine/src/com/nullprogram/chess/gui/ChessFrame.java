@@ -43,7 +43,7 @@ public class ChessFrame extends JFrame
      * Create a new ChessFrame for the given board.
      */
     public ChessFrame() {
-        super(Chess.getTitle());
+        super("V1.0");
         setResizable(true);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

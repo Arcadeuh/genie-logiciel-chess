@@ -9,6 +9,7 @@ import com.nullprogram.chess.pieces.Knight;
 import com.nullprogram.chess.pieces.Pawn;
 import com.nullprogram.chess.pieces.Queen;
 import com.nullprogram.chess.pieces.Rook;
+import com.nullprogram.chess.Side;
 
 /**
  * Board for the game of Gothic Chess.
@@ -74,29 +75,29 @@ public class Gothic extends StandardBoard {
         setHeight(HEIGHT);
         clear();
         for (int x = 0; x < WIDTH; x++) {
-            setPiece(x, WHITE_PAWN_ROW, new Pawn(Piece.Side.WHITE));
-            setPiece(x, BLACK_PAWN_ROW, new Pawn(Piece.Side.BLACK));
+            setPiece(x, WHITE_PAWN_ROW, new Pawn(Side.WHITE));
+            setPiece(x, BLACK_PAWN_ROW, new Pawn(Side.BLACK));
         }
-        setPiece(Q_ROOK, WHITE_ROW, new Rook(Piece.Side.WHITE));
-        setPiece(K_ROOK, WHITE_ROW, new Rook(Piece.Side.WHITE));
-        setPiece(Q_ROOK, BLACK_ROW, new Rook(Piece.Side.BLACK));
-        setPiece(K_ROOK, BLACK_ROW, new Rook(Piece.Side.BLACK));
-        setPiece(Q_KNIGHT, WHITE_ROW, new Knight(Piece.Side.WHITE));
-        setPiece(K_KNIGHT, WHITE_ROW, new Knight(Piece.Side.WHITE));
-        setPiece(Q_KNIGHT, BLACK_ROW, new Knight(Piece.Side.BLACK));
-        setPiece(K_KNIGHT, BLACK_ROW, new Knight(Piece.Side.BLACK));
-        setPiece(Q_BISHOP, WHITE_ROW, new Bishop(Piece.Side.WHITE));
-        setPiece(K_BISHOP, WHITE_ROW, new Bishop(Piece.Side.WHITE));
-        setPiece(Q_BISHOP, BLACK_ROW, new Bishop(Piece.Side.BLACK));
-        setPiece(K_BISHOP, BLACK_ROW, new Bishop(Piece.Side.BLACK));
-        setPiece(QUEEN, WHITE_ROW, new Queen(Piece.Side.WHITE));
-        setPiece(QUEEN, BLACK_ROW, new Queen(Piece.Side.BLACK));
-        setPiece(KING, WHITE_ROW, new King(Piece.Side.WHITE));
-        setPiece(KING, BLACK_ROW, new King(Piece.Side.BLACK));
+        setPiece(Q_ROOK, WHITE_ROW, new Rook(Side.WHITE));
+        setPiece(K_ROOK, WHITE_ROW, new Rook(Side.WHITE));
+        setPiece(Q_ROOK, BLACK_ROW, new Rook(Side.BLACK));
+        setPiece(K_ROOK, BLACK_ROW, new Rook(Side.BLACK));
+        setPiece(Q_KNIGHT, WHITE_ROW, new Knight(Side.WHITE));
+        setPiece(K_KNIGHT, WHITE_ROW, new Knight(Side.WHITE));
+        setPiece(Q_KNIGHT, BLACK_ROW, new Knight(Side.BLACK));
+        setPiece(K_KNIGHT, BLACK_ROW, new Knight(Side.BLACK));
+        setPiece(Q_BISHOP, WHITE_ROW, new Bishop(Side.WHITE));
+        setPiece(K_BISHOP, WHITE_ROW, new Bishop(Side.WHITE));
+        setPiece(Q_BISHOP, BLACK_ROW, new Bishop(Side.BLACK));
+        setPiece(K_BISHOP, BLACK_ROW, new Bishop(Side.BLACK));
+        setPiece(QUEEN, WHITE_ROW, new Queen(Side.WHITE));
+        setPiece(QUEEN, BLACK_ROW, new Queen(Side.BLACK));
+        setPiece(KING, WHITE_ROW, new King(Side.WHITE));
+        setPiece(KING, BLACK_ROW, new King(Side.BLACK));
 
-        setPiece(CHANCELLOR, WHITE_ROW, new Chancellor(Piece.Side.WHITE));
-        setPiece(CHANCELLOR, BLACK_ROW, new Chancellor(Piece.Side.BLACK));
-        setPiece(ARCHBISHOP, WHITE_ROW, new Archbishop(Piece.Side.WHITE));
-        setPiece(ARCHBISHOP, BLACK_ROW, new Archbishop(Piece.Side.BLACK));
+        setPiece(CHANCELLOR, WHITE_ROW, new Chancellor(Side.WHITE));
+        setPiece(CHANCELLOR, BLACK_ROW, new Chancellor(Side.BLACK));
+        setPiece(ARCHBISHOP, WHITE_ROW, new Archbishop(Side.WHITE));
+        setPiece(ARCHBISHOP, BLACK_ROW, new Archbishop(Side.BLACK));
     }
 }

@@ -50,10 +50,10 @@ public final class ChessApplet extends JApplet implements GameListener {
     public void gameEvent(final GameEvent e) {
         if (e.getGame().isDone()) {
             String message;
-            Piece.Side winner = e.getGame().getWinner();
-            if (winner == Piece.Side.WHITE) {
+            Side winner = e.getGame().getWinner();
+            if (winner == Side.WHITE) {
                 message = "White wins";
-            } else if (winner == Piece.Side.BLACK) {
+            } else if (winner == Side.BLACK) {
                 message = "Black wins";
             } else {
                 message = "Stalemate";
