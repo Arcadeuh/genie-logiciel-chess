@@ -1,6 +1,9 @@
 package com.nullprogram.chess;
 
+import com.nullprogram.chess.boards.EmptyBoard;
 import com.nullprogram.chess.gui.ChessFrame;
+import com.nullprogram.chess.gui.FrameController;
+
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -45,7 +48,12 @@ public final class Chess {
         } catch (UnsupportedLookAndFeelException e) {
             LOG.warning("Failed to set 'Look and Feel'");
         }
-        new ChessFrame();
+        
+        //TO DO 
+        Board board = new EmptyBoard();
+        FrameController controller = new FrameController(board);
+        ChessFrame frame = new ChessFrame(board,controller);
+        controller.attach(frame);        
     }
 
     /**

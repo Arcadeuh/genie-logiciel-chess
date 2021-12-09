@@ -5,6 +5,7 @@ import com.nullprogram.chess.Chess;
 import com.nullprogram.chess.Game;
 import com.nullprogram.chess.GameEvent;
 import com.nullprogram.chess.GameListener;
+import com.nullprogram.chess.MenuHandler;
 import com.nullprogram.chess.Player;
 import com.nullprogram.chess.boards.EmptyBoard;
 import com.nullprogram.chess.pieces.ImageServer;
@@ -31,21 +32,18 @@ public class ChessFrame extends JFrame
     private static final long serialVersionUID = 1L;
 
     /** The board display. */
-    private final BoardView display;
+    private BoardView display;
     
-    /** The board controller. */
-    private final BoardController panelController;
-
     /** The progress bar on the display. */
     private final StatusBar progress;
-
-    /** The current game. */
-    private Game game;
+    
+    //TO DO
+    private FrameController controller;
 
     /**
      * Create a new ChessFrame for the given board.
      */
-    public ChessFrame() {
+    public ChessFrame(Board board, FrameController controller) {
         super("V1.0");
         setResizable(true);
         setLocationRelativeTo(null);
@@ -53,46 +51,27 @@ public class ChessFrame extends JFrame
         setIconImage(ImageServer.getTile("King-WHITE"));
         setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
 
-        MenuHandler handler = new MenuHandler(this);
+        this.controller = controller;
+        
+        //Attacher le menu
+        MenuHandler handler = new MenuHandler(this, controller);
         handler.setUpMenu();
 
-        Board emptyBoard = new EmptyBoard();
-        display = new BoardView(emptyBoard);
-        panelController = display.getBoardController();
+        //Attacher la vue du plateau
+        //TO DO 
+        display = new BoardView(board);
+        
+        //Attacher la vue de la barre de progression
         progress = new StatusBar(null);
         add(display);
         add(progress);
         pack();
 
-        addComponentListener(this);
         setLocationRelativeTo(null);
         setVisible(true);
     }
 
-    /**
-     * Set up a new game.
-     */
-    public final void newGame() {
-        NewGame ngFrame = new NewGame(this);
-        ngFrame.setVisible(true);
-        Game newGame = ngFrame.getGame();
-        if (newGame == null) {
-            return;
-        }
-        if (game != null) {
-            game.end();
-        }
-        game = newGame;
-        Board board = game.getBoard();
-        panelController.setBoard(board);
-        display.invalidate();
-        setSize(getPreferredSize());
 
-        progress.setGame(game);
-        game.addGameListener(this);
-        game.addGameListener(panelController);
-        game.begin();
-    }
 
     /**
      * Return the GUI (human) play handler.
@@ -100,59 +79,17 @@ public class ChessFrame extends JFrame
      * @return the player
      */
     public final Player getPlayer() {
-        return panelController;
+    	
+    	//TO DO
+        return controller.boardController;
     }
 
-    /**
-     * Used for manaing menu events.
-     */
-    private class MenuHandler implements ActionListener {
-
-        /** The "Game" menu. */
-        private JMenu game;
-
-        /** The parent chess frame, for callbacks. */
-        private final ChessFrame frame;
-
-        /**
-         * Create the menu handler.
-         *
-         * @param parent parent frame
-         */
-        public MenuHandler(final ChessFrame parent) {
-            frame = parent;
-        }
-
-        @Override
-        public final void actionPerformed(final ActionEvent e) {
-            if ("New Game".equals(e.getActionCommand())) {
-                frame.newGame();
-            } else if ("Exit".equals(e.getActionCommand())) {
-                System.exit(0);
-            }
-        }
-
-        /**
-         * Set up the menu bar.
-         */
-        public final void setUpMenu() {
-            JMenuBar menuBar = new JMenuBar();
-
-            game = new JMenu("Game");
-            game.setMnemonic('G');
-            JMenuItem newGame = new JMenuItem("New Game");
-            newGame.addActionListener(this);
-            newGame.setMnemonic('N');
-            game.add(newGame);
-            game.add(new JSeparator());
-            JMenuItem exitGame = new JMenuItem("Exit");
-            exitGame.addActionListener(this);
-            exitGame.setMnemonic('x');
-            game.add(exitGame);
-            menuBar.add(game);
-
-            setJMenuBar(menuBar);
-        }
+    public BoardView getBoardView() {
+    	return this.display;
+    }
+    
+    public StatusBar getProgressBarView() {
+    	return this.progress;
     }
 
     @Override
@@ -178,6 +115,7 @@ public class ChessFrame extends JFrame
         }
     }
 
+    //TO DO : retirer 
     @Override
     public final void gameEvent(final GameEvent e) {
         progress.repaint();

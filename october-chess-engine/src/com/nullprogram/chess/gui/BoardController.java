@@ -92,7 +92,6 @@ public class BoardController implements MouseListener, Player, GameListener {
     public final void setBoard(final Board b) {
         boardModel = b;
         boardView.updateSize(b.getHeight(),b.getWidth());
-        boardView.repaint();
     }
 
     /**
