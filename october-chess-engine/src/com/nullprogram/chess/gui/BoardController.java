@@ -1,6 +1,7 @@
 package com.nullprogram.chess.gui;
 
 import com.nullprogram.chess.Board;
+import com.nullprogram.chess.Side;
 import com.nullprogram.chess.GameEvent;
 import com.nullprogram.chess.GameListener;
 import com.nullprogram.chess.Move;
@@ -58,7 +59,7 @@ public class BoardController implements MouseListener, Player, GameListener {
     private Mode mode = Mode.WAIT;
 
     /** Current player making a move, when interactive. */
-    private Piece.Side side;
+    private Side side;
 
     /** Latch to hold down the Game thread while the user makes a selection. */
     public CountDownLatch latch;
@@ -154,7 +155,7 @@ public class BoardController implements MouseListener, Player, GameListener {
     
     @Override
     public final Move takeTurn(final Board turnBoard,
-                               final Piece.Side currentSide) {
+                               final Side currentSide) {
         latch = new CountDownLatch(1);
         setBoard(turnBoard);
         side = currentSide;
