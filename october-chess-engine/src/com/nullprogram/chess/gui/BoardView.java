@@ -1,6 +1,7 @@
 package com.nullprogram.chess.gui;
 
 import com.nullprogram.chess.Board;
+import com.nullprogram.chess.Side;
 import com.nullprogram.chess.GameEvent;
 import com.nullprogram.chess.GameListener;
 import com.nullprogram.chess.Move;

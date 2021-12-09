@@ -29,7 +29,7 @@ public class Game implements Runnable {
     private Player black;
 
     /** Whose turn it is right now. */
-    private Piece.Side turn;
+    private Side turn;
 
     /** Current status message. */
     private String status = "";
@@ -53,7 +53,7 @@ public class Game implements Runnable {
     private volatile Boolean done = false;
 
     /** When the game is done, this is the winner. */
-    private Piece.Side winner;
+    private Side winner;
 
     /** List of event listeners. */
     private final Collection<GameListener> listeners =
@@ -100,7 +100,7 @@ public class Game implements Runnable {
      */
     public final void begin() {
         done = false;
-        turn = Piece.Side.BLACK;
+        turn = Side.BLACK;
         callGameListeners(GameEvent.TURN);
         new Thread(this).start();
     }
@@ -110,12 +110,12 @@ public class Game implements Runnable {
         while (!done) {
             /* Determine who's turn it is. */
             Player player;
-            if (turn == Piece.Side.WHITE) {
-                turn = Piece.Side.BLACK;
+            if (turn == Side.WHITE) {
+                turn = Side.BLACK;
                 setStatus("Black's turn.");
                 player = black;
             } else {
-                turn = Piece.Side.WHITE;
+                turn = Side.WHITE;
                 setStatus("White's turn.");
                 player = white;
             }
@@ -131,15 +131,15 @@ public class Game implements Runnable {
             }
 
             /* Check for the end of the game. */
-            Piece.Side opp = Piece.opposite(turn);
+            Side opp = Piece.opposite(turn);
             if (board.checkmate(opp)) {
                 done = true;
-                if (opp == Piece.Side.BLACK) {
+                if (opp == Side.BLACK) {
                     setStatus("White wins!");
-                    winner = Piece.Side.WHITE;
+                    winner = Side.WHITE;
                 } else {
                     setStatus("Black wins!");
-                    winner = Piece.Side.BLACK;
+                    winner = Side.BLACK;
                 }
                 callGameListeners(GameEvent.GAME_END);
                 return;
@@ -197,7 +197,7 @@ public class Game implements Runnable {
      *
      * @return the winner for this game
      */
-    public final Piece.Side getWinner() {
+    public final Side getWinner() {
         return winner;
     }
 

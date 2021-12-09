@@ -3,6 +3,7 @@ package com.nullprogram.chess.boards;
 import com.nullprogram.chess.Board;
 import com.nullprogram.chess.Piece;
 import com.nullprogram.chess.Position;
+import com.nullprogram.chess.Side;
 import com.nullprogram.chess.pieces.Bishop;
 import com.nullprogram.chess.pieces.King;
 import com.nullprogram.chess.pieces.Knight;
@@ -68,34 +69,34 @@ public class StandardBoard extends Board {
         setHeight(HEIGHT);
         clear();
         for (int x = 0; x < WIDTH; x++) {
-            setPiece(x, WHITE_PAWN_ROW, new Pawn(Piece.Side.WHITE));
-            setPiece(x, BLACK_PAWN_ROW, new Pawn(Piece.Side.BLACK));
+            setPiece(x, WHITE_PAWN_ROW, new Pawn(Side.WHITE));
+            setPiece(x, BLACK_PAWN_ROW, new Pawn(Side.BLACK));
         }
-        setPiece(Q_ROOK, WHITE_ROW, new Rook(Piece.Side.WHITE));
-        setPiece(K_ROOK, WHITE_ROW, new Rook(Piece.Side.WHITE));
-        setPiece(Q_ROOK, BLACK_ROW, new Rook(Piece.Side.BLACK));
-        setPiece(K_ROOK, BLACK_ROW, new Rook(Piece.Side.BLACK));
-        setPiece(Q_KNIGHT, WHITE_ROW, new Knight(Piece.Side.WHITE));
-        setPiece(K_KNIGHT, WHITE_ROW, new Knight(Piece.Side.WHITE));
-        setPiece(Q_KNIGHT, BLACK_ROW, new Knight(Piece.Side.BLACK));
-        setPiece(K_KNIGHT, BLACK_ROW, new Knight(Piece.Side.BLACK));
-        setPiece(Q_BISHOP, WHITE_ROW, new Bishop(Piece.Side.WHITE));
-        setPiece(K_BISHOP, WHITE_ROW, new Bishop(Piece.Side.WHITE));
-        setPiece(Q_BISHOP, BLACK_ROW, new Bishop(Piece.Side.BLACK));
-        setPiece(K_BISHOP, BLACK_ROW, new Bishop(Piece.Side.BLACK));
-        setPiece(QUEEN, WHITE_ROW, new Queen(Piece.Side.WHITE));
-        setPiece(QUEEN, BLACK_ROW, new Queen(Piece.Side.BLACK));
-        setPiece(KING, WHITE_ROW, new King(Piece.Side.WHITE));
-        setPiece(KING, BLACK_ROW, new King(Piece.Side.BLACK));
+        setPiece(Q_ROOK, WHITE_ROW, new Rook(Side.WHITE));
+        setPiece(K_ROOK, WHITE_ROW, new Rook(Side.WHITE));
+        setPiece(Q_ROOK, BLACK_ROW, new Rook(Side.BLACK));
+        setPiece(K_ROOK, BLACK_ROW, new Rook(Side.BLACK));
+        setPiece(Q_KNIGHT, WHITE_ROW, new Knight(Side.WHITE));
+        setPiece(K_KNIGHT, WHITE_ROW, new Knight(Side.WHITE));
+        setPiece(Q_KNIGHT, BLACK_ROW, new Knight(Side.BLACK));
+        setPiece(K_KNIGHT, BLACK_ROW, new Knight(Side.BLACK));
+        setPiece(Q_BISHOP, WHITE_ROW, new Bishop(Side.WHITE));
+        setPiece(K_BISHOP, WHITE_ROW, new Bishop(Side.WHITE));
+        setPiece(Q_BISHOP, BLACK_ROW, new Bishop(Side.BLACK));
+        setPiece(K_BISHOP, BLACK_ROW, new Bishop(Side.BLACK));
+        setPiece(QUEEN, WHITE_ROW, new Queen(Side.WHITE));
+        setPiece(QUEEN, BLACK_ROW, new Queen(Side.BLACK));
+        setPiece(KING, WHITE_ROW, new King(Side.WHITE));
+        setPiece(KING, BLACK_ROW, new King(Side.BLACK));
     }
 
     @Override
-    public final Boolean checkmate(final Piece.Side side) {
+    public final Boolean checkmate(final Side side) {
         return check(side) && (moveCount(side) == 0);
     }
 
     @Override
-    public final Boolean stalemate(final Piece.Side side) {
+    public final Boolean stalemate(final Side side) {
         return (!check(side)) && (moveCount(side) == 0);
     }
 
@@ -105,7 +106,7 @@ public class StandardBoard extends Board {
      * @param side side to be tested
      * @return     number of moves right now
      */
-    public final int moveCount(final Piece.Side side) {
+    public final int moveCount(final Side side) {
         int count = 0;
         for (int y = 0; y < getHeight(); y++) {
             for (int x = 0; x < getWidth(); x++) {
@@ -119,12 +120,12 @@ public class StandardBoard extends Board {
     }
 
     @Override
-    public final Boolean check(final Piece.Side side) {
-        Piece.Side attacker;
-        if (side == Piece.Side.WHITE) {
-            attacker = Piece.Side.BLACK;
+    public final Boolean check(final Side side) {
+        Side attacker;
+        if (side == Side.WHITE) {
+            attacker = Side.BLACK;
         } else {
-            attacker = Piece.Side.WHITE;
+            attacker = Side.WHITE;
         }
         Position kingPos = findKing(side);
         if (kingPos == null) {

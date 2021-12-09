@@ -1,6 +1,7 @@
 package com.nullprogram.chess.ai;
 
 import com.nullprogram.chess.Board;
+import com.nullprogram.chess.Side;
 import com.nullprogram.chess.Game;
 import com.nullprogram.chess.Move;
 import com.nullprogram.chess.MoveList;
@@ -49,7 +50,7 @@ public class Minimax implements Player {
     private final Game game;
 
     /** Side this AI plays. */
-    private Piece.Side side = null;
+    private Side side = null;
 
     /** Best move, the selected move. */
     private volatile Move bestMove;
@@ -161,7 +162,7 @@ public class Minimax implements Player {
 
     @Override
     public final Move takeTurn(final Board board,
-                               final Piece.Side currentSide) {
+                               final Side currentSide) {
         side = currentSide;
 
         /* Gather up every move. */
@@ -232,13 +233,13 @@ public class Minimax implements Player {
      * @param beta  upper bound to check
      * @return      best valuation found at lowest depth
      */
-    private double search(final Board b, final int depth, final Piece.Side s,
+    private double search(final Board b, final int depth, final Side s,
                           final double alpha, final double beta) {
         if (depth == 0) {
             double v = valuate(b);
             return (s != side) ? -v : v;
         }
-        Piece.Side opps = Piece.opposite(s);  // opposite side
+        Side opps = Piece.opposite(s);  // opposite side
         double best = alpha;
         MoveList list = b.allMoves(s, true);
         for (Move move : list) {
@@ -281,11 +282,12 @@ public class Minimax implements Player {
                 Position pos = new Position(x, y);
                 Piece p = b.getPiece(pos);
                 if (p != null) {
-                    value += values.get(p.getClass()) * p.getSide().value();
+                	int reverse = p.getSide() == Side.WHITE ? 1 : -1; 
+                    value += values.get(p.getClass()) * reverse;
                 }
             }
         }
-        return value * side.value();
+        return value * (side==Side.WHITE ? 1 : -1);
     }
 
     /**
@@ -306,7 +308,7 @@ public class Minimax implements Player {
      * @param s side of king to be checked
      * @return king insafety score
      */
-    private double kingInsafetyValue(final Board b, final Piece.Side s) {
+    private double kingInsafetyValue(final Board b, final Side s) {
         /* Trace lines away from the king and count the spaces. */
         Position king = b.findKing(s);
         if (king == null) {

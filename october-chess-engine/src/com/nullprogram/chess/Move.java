@@ -32,7 +32,7 @@ public final class Move implements Serializable {
     private String replacement;
 
     /** Side of the new piece to make. */
-    private Piece.Side replacementSide;
+    private Side replacementSide;
 
     /** Score for this move. */
     private double score;
@@ -141,7 +141,7 @@ public final class Move implements Serializable {
      *
      * @param side piece to be created
      */
-    public void setReplacementSide(final Piece.Side side) {
+    public void setReplacementSide(final Side side) {
         replacementSide = side;
     }
 
@@ -150,7 +150,7 @@ public final class Move implements Serializable {
      *
      * @return side of piece to be created
      */
-    public Piece.Side getReplacementSide() {
+    public Side getReplacementSide() {
         return replacementSide;
     }
 

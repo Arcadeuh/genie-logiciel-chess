@@ -15,5 +15,5 @@ public interface Player {
      * @param side  the player's side
      * @return the selected move for this player
      */
-    Move takeTurn(Board board, Piece.Side side);
+    Move takeTurn(Board board, Side side);
 }

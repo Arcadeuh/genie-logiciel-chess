@@ -1,6 +1,7 @@
 package com.nullprogram.chess.ai;
 
 import com.nullprogram.chess.Board;
+import com.nullprogram.chess.Side;
 import com.nullprogram.chess.Game;
 import com.nullprogram.chess.GameEvent;
 import com.nullprogram.chess.GameListener;
@@ -153,11 +154,11 @@ public class OptimizeGA implements GameListener {
         int bdir = 0;
         Game game = e.getGame();
         if (game.isDone()) {
-            if (game.getWinner() == Piece.Side.WHITE) {
+            if (game.getWinner() == Side.WHITE) {
                 LOG.info("White wins.");
                 adir = 1;
                 bdir = -1;
-            } else if (game.getWinner() == Piece.Side.BLACK) {
+            } else if (game.getWinner() == Side.BLACK) {
                 LOG.info("Black wins.");
                 adir = -1;
                 bdir = 1;

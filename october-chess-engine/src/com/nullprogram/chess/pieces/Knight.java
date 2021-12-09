@@ -4,6 +4,7 @@ import com.nullprogram.chess.Move;
 import com.nullprogram.chess.MoveList;
 import com.nullprogram.chess.Piece;
 import com.nullprogram.chess.Position;
+import com.nullprogram.chess.Side;
 
 /**
  * The Chess knight.

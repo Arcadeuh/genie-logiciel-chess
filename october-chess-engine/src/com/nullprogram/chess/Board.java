@@ -39,7 +39,7 @@ public abstract class Board implements Serializable {
      * @param       side side to be checked
      * @return true if board is in a state of checkmate
      */
-    public abstract Boolean checkmate(Piece.Side side);
+    public abstract Boolean checkmate(Side side);
 
     /**
      * Determine if board is in a state of stalemate.
@@ -47,7 +47,7 @@ public abstract class Board implements Serializable {
      * @param       side side to be checked
      * @return true if board is in a state of stalemate
      */
-    public abstract Boolean stalemate(Piece.Side side);
+    public abstract Boolean stalemate(Side side);
 
     /**
      * Determine if board is in a state of check.
@@ -55,7 +55,7 @@ public abstract class Board implements Serializable {
      * @param side side to check for check
      * @return     true if board is in a state of check
      */
-    public abstract Boolean check(Piece.Side side);
+    public abstract Boolean check(Side side);
 
     /**
      * Determine if board is in a state of check.
@@ -63,7 +63,7 @@ public abstract class Board implements Serializable {
      * @return     true if board is in a state of check
      */
     public final Boolean check() {
-        return check(Piece.Side.WHITE) || check(Piece.Side.BLACK);
+        return check(Side.WHITE) || check(Side.BLACK);
     }
 
     /**
@@ -72,7 +72,7 @@ public abstract class Board implements Serializable {
      * @return     true if board is in checkmate
      */
     public final Boolean checkmate() {
-        return checkmate(Piece.Side.WHITE) || checkmate(Piece.Side.BLACK);
+        return checkmate(Side.WHITE) || checkmate(Side.BLACK);
     }
 
     /**
@@ -81,7 +81,7 @@ public abstract class Board implements Serializable {
      * @return     true if board is in stalemate
      */
     public final Boolean stalemate() {
-        return stalemate(Piece.Side.WHITE) || stalemate(Piece.Side.BLACK);
+        return stalemate(Side.WHITE) || stalemate(Side.BLACK);
     }
 
     /**
@@ -90,7 +90,7 @@ public abstract class Board implements Serializable {
      * @param side whose king
      * @return     the king's board position
      */
-    public final Position findKing(final Piece.Side side) {
+    public final Position findKing(final Side side) {
         for (int y = 0; y < getHeight(); y++) {
             for (int x = 0; x < getWidth(); x++) {
                 Position pos = new Position(x, y);
@@ -270,7 +270,7 @@ public abstract class Board implements Serializable {
      * @param side side of the piece wanting to move
      * @return    emptiness of position
      */
-    public final Boolean isEmpty(final Position pos, final Piece.Side side) {
+    public final Boolean isEmpty(final Position pos, final Side side) {
         Piece p = getPiece(pos);
         if (p == null) {
             return true;
@@ -306,7 +306,7 @@ public abstract class Board implements Serializable {
      * @param side side of the piece wanting to move
      * @return     validity of position
      */
-    public final Boolean isFree(final Position pos, final Piece.Side side) {
+    public final Boolean isFree(final Position pos, final Side side) {
         return inRange(pos) && isEmpty(pos, side);
     }
 
@@ -330,7 +330,7 @@ public abstract class Board implements Serializable {
      * @param check check for check
      * @return      list of all moves
      */
-    public final MoveList allMoves(final Piece.Side side, final boolean check) {
+    public final MoveList allMoves(final Side side, final boolean check) {
         MoveList list = new MoveList(this, false);
         for (int y = 0; y < boardHeight; y++) {
             for (int x = 0; x < boardWidth; x++) {
