@@ -34,7 +34,7 @@ import javax.swing.JComponent;
  * This swing element displays a game board and can also behave as a
  * player as needed.
  */
-public class BoardController implements MouseListener, Player, GameListener {
+public class BoardController implements Player, GameListener {
 
     /** This class's Logger. */
     private static final Logger LOG =
@@ -48,9 +48,6 @@ public class BoardController implements MouseListener, Player, GameListener {
 
     /** The boardView being displayed. */
     private BoardView boardView;
-    
-    /** The currently selected tile. */
-    private Position selected = null;
 
     /** The list of moves for the selected tile. */
     private MoveList moves = null;
@@ -113,14 +110,6 @@ public class BoardController implements MouseListener, Player, GameListener {
     public final BoardView getBoardView() {
         return boardView;
     }
-    /**
-     * Get Position selected by user
-     *
-     * @return Position
-     */
-    public Position getSelected() {
-    	return selected;
-    }
     
     /**
      * Get move selected by user
@@ -130,6 +119,15 @@ public class BoardController implements MouseListener, Player, GameListener {
     public MoveList getMoves() {
     	return moves;
     }
+    
+    /**
+     * Set move selected by user
+     *
+     * @return MoveList
+     */
+    public void setMoves(MoveList newMoves) {
+    	this.moves = newMoves ;
+    }
 
     @Override
     public final void gameEvent(final GameEvent e) {
@@ -137,19 +135,6 @@ public class BoardController implements MouseListener, Player, GameListener {
         if (e.getType() != GameEvent.STATUS) {
         	 boardView.repaint();
         }
-    }
-    
-    @Override
-    public final void mouseReleased(final MouseEvent e) {
-        switch (e.getButton()) {
-        case MouseEvent.BUTTON1:
-            leftClick(e);
-            break;
-        default:
-            /* do nothing */
-            break;
-        }
-        boardView.repaint();
     }
     
     
@@ -169,66 +154,29 @@ public class BoardController implements MouseListener, Player, GameListener {
         return selectedMove;
     }
 
-    /**
-     * Handle the event when the left button is clicked.
-     *
-     * @param e the mouse event
-     */
-    private void leftClick(final MouseEvent e) {
-        if (mode == Mode.WAIT) {
-            return;
-        }
-
-        Position pos = boardView.getPixelPosition(e.getPoint());
-        if (!boardModel.inRange(pos)) {
-            /* Click was outside the board, somehow. */
-            return;
-        }
-        if (pos != null) {
-            if (pos.equals(selected)) {
-                /* Deselect */
-                selected = null;
-                moves = null;
-            } else if (moves != null && moves.containsDest(pos)) {
-                /* Move selected piece */
-                mode = Mode.WAIT;
-                Move move = moves.getMoveByDest(pos);
-                selected = null;
-                moves = null;
-                selectedMove = move;
-                latch.countDown();
-            } else {
-                /* Select this position */
-                Piece p = boardModel.getPiece(pos);
-                if (p != null && p.getSide() == side) {
-                    selected = pos;
-                    moves = p.getMoves(true);
-                }
-            }
-        }
-    }
-
-    @Override
-    public void mouseExited(final MouseEvent e) {
-        /* Do nothing */
-    }
-
-    @Override
-    public void mouseEntered(final MouseEvent e) {
-        /* Do nothing */
-    }
-
-    @Override
-    public void mouseClicked(final MouseEvent e) {
-        /* Do nothing */
-    }
-
-    @Override
-    public void mousePressed(final MouseEvent e) {
-        /* Do nothing */
-    }
+    
 
 	public Move getSelectedMove() {
 		return selectedMove;
+	}
+	
+	public CountDownLatch getLatch() {
+		return this.latch;
+	}
+	
+	public Mode getMode() {
+		return this.mode;
+	}
+	
+	public Side getSide() {
+		return this.side;
+	}
+	
+	public void setSelectedMove(Move move) {
+		this.selectedMove = move;
+	}
+	
+	public void setMode(Mode mode) {
+		this.mode = mode;
 	}
 }

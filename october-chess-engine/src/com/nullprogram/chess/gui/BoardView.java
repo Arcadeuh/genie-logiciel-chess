@@ -67,6 +67,9 @@ public class BoardView extends JComponent {
     /** The Controller of the board being displayed. */
     private BoardController boardController;
 
+    /** The Controller of the board being displayed. */
+    private MouseHandler mouseHandler;
+
     /** Indicate flipped status. */
     private boolean flipped = true;
 
@@ -104,7 +107,8 @@ public class BoardView extends JComponent {
      */
     public BoardView(Board board) {
         this.boardController = new BoardController(board,this);
-        addMouseListener(boardController);
+        this.mouseHandler = new MouseHandler(boardController);
+        addMouseListener(mouseHandler);
     }
 
     /**
@@ -240,9 +244,9 @@ public class BoardView extends JComponent {
         }
 
         /* Draw selected square */
-        if (boardController.getSelected() != null) {
+        if (mouseHandler.getSelected() != null) {
             g.setColor(SELECTED);
-            highlight(g, boardController.getSelected());
+            highlight(g, mouseHandler.getSelected());
 
             /* Draw piece moves */
             MoveList moves = boardController.getMoves();
