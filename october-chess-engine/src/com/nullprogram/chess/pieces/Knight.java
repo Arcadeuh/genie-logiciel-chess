@@ -39,7 +39,7 @@ public class Knight extends Piece {
     @Override
     public final MoveList getMoves(final boolean check) {
         MoveList list = new MoveList(getBoard(), check);
-        list = getMoves(this, list);
+        getMoves(this, list);
         return list;
     }
 

@@ -20,7 +20,7 @@ public final class ImageServer {
 
     /** The image cache. */
     private static Map<String, Image> cache =
-        new HashMap<String, Image>();
+        new HashMap<>();
 
     /**
      * Hidden constructor.

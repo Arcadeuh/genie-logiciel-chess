@@ -220,4 +220,15 @@ public class MoveList implements Iterable<Move>, Serializable {
     public final Iterator<Move> iterator() {
         return moves.iterator();
     }
+    
+    /**
+     * Add a move to a listMove of a piece
+     * 
+     * @param orig is the origin of the move
+     * @param dest is the destination of the move
+     * @return true if everything have been done
+     */
+    public final boolean addPieceMove(Position orig, Position dest) {
+    	return this.addCapture(new Move(orig, dest)) && Boolean.TRUE.equals(board.isFree(dest));
+    }
 }

@@ -51,10 +51,7 @@ public class Rook extends Piece {
         while (x >= 0) {
             x--;
             Position pos = new Position(x, y);
-            if (!list.addCapture(new Move(home, pos))) {
-                break;
-            }
-            if (!p.getBoard().isFree(pos)) {
+            if (list.addPieceMove(home,pos)) {
                 break;
             }
         }
@@ -63,10 +60,7 @@ public class Rook extends Piece {
         while (x < p.getBoard().getWidth()) {
             x++;
             Position pos = new Position(x, y);
-            if (!list.addCapture(new Move(home, pos))) {
-                break;
-            }
-            if (!p.getBoard().isFree(pos)) {
+            if (list.addPieceMove(home,pos)) {
                 break;
             }
         }
@@ -75,10 +69,7 @@ public class Rook extends Piece {
         while (y >= 0) {
             y--;
             Position pos = new Position(x, y);
-            if (!list.addCapture(new Move(home, pos))) {
-                break;
-            }
-            if (!p.getBoard().isFree(pos)) {
+            if (list.addPieceMove(home,pos)) {
                 break;
             }
         }
@@ -87,10 +78,7 @@ public class Rook extends Piece {
         while (y < p.getBoard().getHeight()) {
             y++;
             Position pos = new Position(x, y);
-            if (!list.addCapture(new Move(home, pos))) {
-                break;
-            }
-            if (!p.getBoard().isFree(pos)) {
+            if (list.addPieceMove(home,pos)) {
                 break;
             }
         }

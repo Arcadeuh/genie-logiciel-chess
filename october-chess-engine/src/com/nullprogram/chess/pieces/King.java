@@ -47,7 +47,7 @@ public class King extends Piece {
         /* check for castling */
         enemy = null;
         inCheck = null;
-        if (check && !moved()) {
+        if (check && Boolean.FALSE.equals(moved())) {
             Move left = castle(-1);
             if (left != null) {
                 list.add(left);

@@ -52,10 +52,7 @@ public class Bishop extends Piece {
             x--;
             y--;
             Position pos = new Position(x, y);
-            if (!list.addCapture(new Move(home, pos))) {
-                break;
-            }
-            if (!p.getBoard().isFree(pos)) {
+            if (list.addPieceMove(home,pos)) {
                 break;
             }
         }
@@ -67,10 +64,7 @@ public class Bishop extends Piece {
             x++;
             y++;
             Position pos = new Position(x, y);
-            if (!list.addCapture(new Move(home, pos))) {
-                break;
-            }
-            if (!p.getBoard().isFree(pos)) {
+            if (list.addPieceMove(home,pos)) {
                 break;
             }
         }
@@ -80,10 +74,7 @@ public class Bishop extends Piece {
             x--;
             y++;
             Position pos = new Position(x, y);
-            if (!list.addCapture(new Move(home, pos))) {
-                break;
-            }
-            if (!p.getBoard().isFree(pos)) {
+            if (list.addPieceMove(home,pos)) {
                 break;
             }
         }
@@ -93,10 +84,7 @@ public class Bishop extends Piece {
             x++;
             y--;
             Position pos = new Position(x, y);
-            if (!list.addCapture(new Move(home, pos))) {
-                break;
-            }
-            if (!p.getBoard().isFree(pos)) {
+            if (list.addPieceMove(home,pos)) {
                 break;
             }
         }
