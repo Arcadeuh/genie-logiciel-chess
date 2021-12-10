@@ -1,8 +1,12 @@
 package com.nullprogram.chess;
 
-import com.nullprogram.chess.boards.EmptyBoard;
-import org.junit.Test;
-import static org.junit.Assert.assertEquals;
+import com.nullprogram.chess.models.Board;
+import com.nullprogram.chess.models.boards.EmptyBoard;
+//import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static junit.framework.Assert.assertEquals;
+//import static org.junit.Assert.assertEquals;
 
 public class BoardTest {
 
