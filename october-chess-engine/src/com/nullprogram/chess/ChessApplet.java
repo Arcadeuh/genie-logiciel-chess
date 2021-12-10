@@ -1,9 +1,13 @@
 package com.nullprogram.chess;
 
-import com.nullprogram.chess.ai.Minimax;
-import com.nullprogram.chess.boards.StandardBoard;
-import com.nullprogram.chess.gui.BoardController;
-import com.nullprogram.chess.gui.BoardView;
+import com.nullprogram.chess.models.Game;
+import com.nullprogram.chess.models.GameEvent;
+import com.nullprogram.chess.models.GameListener;
+import com.nullprogram.chess.models.Side;
+import com.nullprogram.chess.models.ai.Minimax;
+import com.nullprogram.chess.models.boards.StandardBoard;
+import com.nullprogram.chess.controllers.BoardController;
+import com.nullprogram.chess.view.BoardView;
 
 import java.util.logging.Logger;
 import javax.swing.JApplet;

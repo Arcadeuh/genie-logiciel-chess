@@ -1,6 +1,6 @@
 package com.nullprogram.chess;
 
-import com.nullprogram.chess.gui.ChessFrame;
+import com.nullprogram.chess.view.ChessFrame;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
