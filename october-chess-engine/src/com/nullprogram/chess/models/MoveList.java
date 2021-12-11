@@ -1,5 +1,6 @@
 package com.nullprogram.chess.models;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -14,13 +15,14 @@ import java.util.List;
 public class MoveList implements Iterable<Move>, Serializable {
 
 	/** Versioning for object serialization. */
+	@Serial
 	private static final long serialVersionUID = -25601206293390593L;
 
 	/** The board used to verify positions before adding them. */
-	private Board board;
+	private final Board board;
 
 	/** Should we check for check when verifying moves. */
-	private boolean check;
+	private final boolean check;
 
 	/** The actual list of moves. */
 	private final List<Move> moves = new ArrayList<>();
@@ -49,24 +51,20 @@ public class MoveList implements Iterable<Move>, Serializable {
 	 * Add a move without verifying it.
 	 * 
 	 * @param move move to be added
-	 * @return true
 	 */
-	public final boolean add(final Move move) {
+	public final void add(final Move move) {
 		moves.add(move);
-		return true;
 	}
 
 	/**
 	 * Add a collection of moves to this one.
 	 * 
 	 * @param list a collection of moves
-	 * @return true
 	 */
-	public final boolean addAll(final Iterable<Move> list) {
+	public final void addAll(final Iterable<Move> list) {
 		for (Move move : list) {
 			moves.add(move);
 		}
-		return true;
 	}
 
 	/**
@@ -77,7 +75,7 @@ public class MoveList implements Iterable<Move>, Serializable {
 	 */
 	public final boolean addMove(final Move move) {
 		if (Boolean.TRUE.equals(board.isFree(move.getDest()))) {
-			if (!causesCheck(move)) {
+			if (causesCheck(move)) {
 				add(move);
 				return true;
 			}
@@ -95,7 +93,7 @@ public class MoveList implements Iterable<Move>, Serializable {
 	public final boolean addCapture(final Move move) {
 		Piece p = board.getPiece(move.getOrigin());
 		if (Boolean.TRUE.equals(board.isFree(move.getDest(), p.getSide()))) {
-			if (!causesCheck(move)) {
+			if (causesCheck(move)) {
 				add(move);
 				return true;
 			}
@@ -108,16 +106,13 @@ public class MoveList implements Iterable<Move>, Serializable {
 	 * Add move to list only if the piece will perform a capture.
 	 *
 	 * @param move position to be added
-	 * @return true if position was added
 	 */
-	public final boolean addCaptureOnly(final Move move) {
+	public final void addCaptureOnly(final Move move) {
 		Piece p = board.getPiece(move.getOrigin());
-		if (Boolean.TRUE.equals(board.isFree(move.getDest(), p.getSide()) && !board.isFree(move.getDest())) && !causesCheck(move)) {
+		if (Boolean.TRUE.equals(board.isFree(move.getDest(), p.getSide()) && !board.isFree(move.getDest())) && causesCheck(move)) {
 
 			add(move);
-			return true;
 		}
-		return false;
 	}
 
 	/**
@@ -128,13 +123,13 @@ public class MoveList implements Iterable<Move>, Serializable {
 	 */
 	private boolean causesCheck(final Move move) {
 		if (!check) {
-			return false;
+			return true;
 		}
 		Piece p = board.getPiece(move.getOrigin());
 		board.move(move);
 		boolean ret = board.check(p.getSide());
 		board.undo();
-		return ret;
+		return !ret;
 	}
 
 	/**

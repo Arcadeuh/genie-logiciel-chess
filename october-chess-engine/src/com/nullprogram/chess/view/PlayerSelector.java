@@ -1,6 +1,7 @@
 package com.nullprogram.chess.view;
 
 import java.awt.Component;
+import java.io.Serial;
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
@@ -16,7 +17,8 @@ import javax.swing.ListSelectionModel;
 public class PlayerSelector extends JPanel {
 
 	/** Version for object serialization. */
-	private static final long serialVersionUID = 1L;
+	@Serial
+    private static final long serialVersionUID = 1L;
 
 	/** JList labels for the user. */
 	private static final String[] LABELS_AI = { "Fool (2 plies)", "Very Easy (3 plies)", "Easy (4 plies)",

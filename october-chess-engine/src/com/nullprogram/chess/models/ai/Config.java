@@ -1,5 +1,6 @@
 package com.nullprogram.chess.models.ai;
 
+import java.io.Serial;
 import java.util.HashMap;
 import java.util.Properties;
 
@@ -13,6 +14,7 @@ public class Config extends HashMap<String, Double> {
 			"Archbishop", "material", "safety", "mobility" };
 
 	/** Version for object serialization. */
+	@Serial
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -50,7 +52,7 @@ public class Config extends HashMap<String, Double> {
 	public final String toString() {
 		StringBuilder str = new StringBuilder();
 		for (String prop : PLIST) {
-			str.append(prop + "=" + get(prop) + ",");
+			str.append(prop).append("=").append(get(prop)).append(",");
 		}
 		return str.toString();
 	}

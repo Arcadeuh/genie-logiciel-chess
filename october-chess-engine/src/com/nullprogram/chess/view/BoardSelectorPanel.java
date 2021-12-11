@@ -6,6 +6,7 @@ import javax.swing.ButtonGroup;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
+import java.io.Serial;
 
 /**
  * Creates a panel for selecting a player type.
@@ -13,7 +14,8 @@ import javax.swing.JRadioButton;
 public class BoardSelectorPanel extends JPanel {
 
 	/** Version for object serialization. */
-	private static final long serialVersionUID = 1L;
+	@Serial
+    private static final long serialVersionUID = 1L;
 
 	/** Selection for a human player. */
 	private final JRadioButton standard;

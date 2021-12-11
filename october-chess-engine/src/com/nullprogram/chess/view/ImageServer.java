@@ -19,7 +19,7 @@ public final class ImageServer {
 	private static final Logger LOG = Logger.getLogger("com.nullprogram.chess.view.ImageServer");
 
 	/** The image cache. */
-	private static Map<String, Image> cache = new HashMap<>();
+	private static final Map<String, Image> cache = new HashMap<>();
 
 	/**
 	 * Hidden constructor.

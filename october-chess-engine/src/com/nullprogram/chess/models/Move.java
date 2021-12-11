@@ -1,5 +1,6 @@
 package com.nullprogram.chess.models;
 
+import java.io.Serial;
 import java.io.Serializable;
 
 /**
@@ -14,6 +15,7 @@ import java.io.Serializable;
 public final class Move implements Serializable {
 
 	/** Versioning for object serialization. */
+	@Serial
 	private static final long serialVersionUID = 276216209410699761L;
 
 	/** Originating position. */

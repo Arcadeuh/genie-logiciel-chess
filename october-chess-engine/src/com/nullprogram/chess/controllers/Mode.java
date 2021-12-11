@@ -5,5 +5,5 @@ public enum Mode {
 	/** Don't interact with the player. */
 	WAIT,
 	/** Interact with the player. */
-	PLAYER;
+	PLAYER
 }

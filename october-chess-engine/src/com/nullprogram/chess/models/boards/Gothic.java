@@ -10,13 +10,16 @@ import com.nullprogram.chess.models.pieces.Queen;
 import com.nullprogram.chess.models.pieces.Rook;
 import com.nullprogram.chess.models.Side;
 
+import java.io.Serial;
+
 /**
  * Board for the game of Gothic Chess.
  */
 public class Gothic extends StandardBoard {
 
 	/** Serialization identifier. */
-	private static final long serialVersionUID = 277220873L;
+	@Serial
+    private static final long serialVersionUID = 277220873L;
 
 	/** The standard board width. */
 	static final int WIDTH = 10;

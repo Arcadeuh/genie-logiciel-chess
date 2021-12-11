@@ -2,6 +2,7 @@ package com.nullprogram.chess.models;
 
 import com.nullprogram.chess.view.ImageServer;
 import java.awt.Image;
+import java.io.Serial;
 import java.io.Serializable;
 
 /**
@@ -18,7 +19,8 @@ import java.io.Serializable;
 public abstract class Piece implements Serializable {
 
 	/** Versioning for object serialization. */
-	private static final long serialVersionUID = -214124732216708977L;
+	@Serial
+    private static final long serialVersionUID = -214124732216708977L;
 
 	/** The side this piece belongs to. */
 	private Side side;

@@ -55,7 +55,7 @@ public final class Chess {
 	 * @return the title of the program
 	 */
 	public static String getTitle() {
-		String version = "";
+		String version;
 		try {
 			InputStream s = Chess.class.getResourceAsStream("/version.txt");
 			Reader isr = new InputStreamReader(s, StandardCharsets.UTF_8);

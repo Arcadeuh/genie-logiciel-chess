@@ -21,6 +21,7 @@ import java.awt.geom.AffineTransform;
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
 import java.awt.geom.RoundRectangle2D;
+import java.io.Serial;
 import javax.swing.JComponent;
 
 /**
@@ -50,16 +51,17 @@ public class BoardView extends JComponent {
 			(double)HIGHLIGHT_PADDING * 4);
 
 	/** Version for object serialization. */
+	@Serial
 	private static final long serialVersionUID = 1L;
 
 	/** The Controller of the board being displayed. */
-	private transient BoardController boardController;
+	private final transient BoardController boardController;
 
 	/** The Controller of the board being displayed. */
-	private transient MouseHandler mouseHandler;
+	private final transient MouseHandler mouseHandler;
 
 	/** Indicate flipped status. */
-	private boolean flipped = true;
+	private final boolean flipped = true;
 
 	/** The color for the dark tiles on the board. */
 	static final Color DARK = new Color(0xD1, 0x8B, 0x47);
@@ -82,11 +84,13 @@ public class BoardView extends JComponent {
 	/** Preferred size of a tile, in pixels. */
 	static final int PREF_SIZE = 75;
 
-	/**
-	 * Hidden constructor.
-	 */
-	protected BoardView() {
-	}
+// --Commented out by Inspection START (10/12/2021 18:24):
+//	/**
+//	 * Hidden constructor.
+//	 */
+//	protected BoardView() {
+//	}
+// --Commented out by Inspection STOP (10/12/2021 18:24)
 
 	/**
 	 * Create a new display for given board.
@@ -123,7 +127,7 @@ public class BoardView extends JComponent {
 	 * @return the position on the board
 	 */
 	public Position getPixelPosition(final Point2D p) {
-		Point2D pout = null;
+		Point2D pout;
 		try {
 			pout = getTransform().inverseTransform(p, null);
 		} catch (java.awt.geom.NoninvertibleTransformException t) {

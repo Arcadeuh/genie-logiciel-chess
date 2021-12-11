@@ -11,13 +11,16 @@ import com.nullprogram.chess.models.pieces.Pawn;
 import com.nullprogram.chess.models.pieces.Queen;
 import com.nullprogram.chess.models.pieces.Rook;
 
+import java.io.Serial;
+
 /**
  * The board for a standard game of chess.
  */
 public class StandardBoard extends Board {
 
 	/** Serialization identifier. */
-	private static final long serialVersionUID = -484123716L;
+	@Serial
+    private static final long serialVersionUID = -484123716L;
 
 	/** The standard board width. */
 	static final int WIDTH = 8;

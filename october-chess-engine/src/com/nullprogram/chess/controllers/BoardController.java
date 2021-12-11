@@ -9,6 +9,7 @@ import com.nullprogram.chess.models.MoveList;
 import com.nullprogram.chess.models.Player;
 import com.nullprogram.chess.view.BoardView;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.concurrent.CountDownLatch;
 import java.util.logging.Logger;
@@ -25,13 +26,14 @@ public class BoardController implements Player, GameListener, Serializable {
 	private static final Logger LOG = Logger.getLogger("com.nullprogram.chess.controllers.BoardController");
 
 	/** Version for object serialization. */
+	@Serial
 	private static final long serialVersionUID = 145678456L;
 
 	/** The board being displayed. */
 	private Board boardModel;
 
 	/** The boardView being displayed. */
-	private BoardView boardView;
+	private final BoardView boardView;
 
 	/** The list of moves for the selected tile. */
 	private MoveList moves = null;
@@ -48,11 +50,6 @@ public class BoardController implements Player, GameListener, Serializable {
 	/** The move selected by the player. */
 	private Move selectedMove;
 
-	/**
-	 * Hidden constructor.
-	 */
-	protected BoardController() {
-	}
 
 	/**
 	 * Create a new display for given board.
@@ -105,8 +102,6 @@ public class BoardController implements Player, GameListener, Serializable {
 
 	/**
 	 * Set move selected by user
-	 *
-	 * @return MoveList
 	 */
 	public void setMoves(MoveList newMoves) {
 		this.moves = newMoves;
@@ -136,26 +131,46 @@ public class BoardController implements Player, GameListener, Serializable {
 		return selectedMove;
 	}
 
-	public Move getSelectedMove() {
-		return selectedMove;
-	}
 
+	/**
+	 * Get thread latch
+	 *
+	 * @return CountDownLatch
+	 */
 	public CountDownLatch getLatch() {
 		return this.latch;
 	}
 
+	/**
+	 * Get mode of UI with player, interacting or ignoring him
+	 *
+	 * @return Mode
+	 */
 	public Mode getMode() {
 		return this.mode;
 	}
 
+	/**
+	 * Get side of current player
+	 *
+	 * @return Side
+	 */
 	public Side getSide() {
 		return this.side;
 	}
 
+	/**
+	 * Setter on selected Move (determined by MouseHandler)
+	 *
+	 */
 	public void setSelectedMove(Move move) {
 		this.selectedMove = move;
 	}
 
+	/**
+	 * Setter on side (determined by MouseHandler)
+	 *
+	 */
 	public void setMode(Mode mode) {
 		this.mode = mode;
 	}

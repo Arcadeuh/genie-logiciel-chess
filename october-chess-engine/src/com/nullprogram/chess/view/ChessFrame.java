@@ -13,6 +13,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
+import java.io.Serial;
 import javax.swing.*;
 
 /**
@@ -21,6 +22,7 @@ import javax.swing.*;
 public class ChessFrame extends JFrame implements ComponentListener, GameListener {
 
 	/** Version for object serialization. */
+	@Serial
 	private static final long serialVersionUID = 1L;
 
 	/** The board display. */
@@ -128,8 +130,7 @@ public class ChessFrame extends JFrame implements ComponentListener, GameListene
 		public final void setUpMenu() {
 			JMenuBar menuBar = new JMenuBar();
 
-			/** The "Game" menu. */
-			JMenu gameMenu = new JMenu("Game");
+            JMenu gameMenu = new JMenu("Game");
 			gameMenu.setMnemonic('G');
 			JMenuItem newGame = new JMenuItem("New Game");
 			newGame.addActionListener(this);

@@ -1,12 +1,15 @@
 package com.nullprogram.chess.models.boards;
 
+import java.io.Serial;
+
 /**
  * An empty Chess board.
  */
 public class EmptyBoard extends StandardBoard {
 
 	/** Serialization identifier. */
-	private static final long serialVersionUID = -163784695L;
+	@Serial
+    private static final long serialVersionUID = -163784695L;
 
 	/**
 	 * Default board width.

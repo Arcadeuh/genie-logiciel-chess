@@ -9,6 +9,7 @@ import com.nullprogram.chess.models.boards.StandardBoard;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.Serial;
 import javax.swing.*;
 
 /**
@@ -17,7 +18,8 @@ import javax.swing.*;
 public class NewGame extends JDialog implements ActionListener {
 
 	/** Version for object serialization. */
-	private static final long serialVersionUID = 1L;
+	@Serial
+    private static final long serialVersionUID = 1L;
 
 	/** Parent to this dialog. */
 	private final ChessFrame frameParent;

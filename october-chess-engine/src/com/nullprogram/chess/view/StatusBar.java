@@ -8,6 +8,7 @@ import java.awt.FontMetrics;
 import java.awt.Graphics2D;
 import java.awt.Graphics;
 import java.awt.RenderingHints;
+import java.io.Serial;
 import java.util.Timer;
 import java.util.TimerTask;
 import javax.swing.JComponent;
@@ -18,7 +19,8 @@ import javax.swing.JComponent;
 public class StatusBar extends JComponent {
 
 	/** Version for object serialization. */
-	private static final long serialVersionUID = 1L;
+	@Serial
+    private static final long serialVersionUID = 1L;
 
 	/** Milliseconds to wait between display updates. */
 	private static final long REPAINT_DELAY = 1000L;
@@ -47,9 +49,6 @@ public class StatusBar extends JComponent {
 	/** Horizontal padding around the progress bar. */
 	static final int BAR_PADDING_X = 10;
 
-	/** Display update timer. */
-	private  final transient Timer timer = new Timer(true);
-
 	/**
 	 * Create a new status bar.
 	 *
@@ -62,6 +61,7 @@ public class StatusBar extends JComponent {
 		setMinimumSize(null);
 		setMaximumSize(null);
 		game = observed;
+        Timer timer = new Timer(true);
 		timer.schedule(new TimerTask() {
 			@Override
 			public void run() {

@@ -10,17 +10,17 @@ public final class BoardFactory {
 	/**
 	 * The Gothic chess board.
 	 */
-	private static Class<?> gothic = (new Gothic()).getClass();
+	private static final Class<?> gothic = Gothic.class;
 
 	/**
 	 * The standard chess board.
 	 */
-	private static Class<?> standard = (new StandardBoard()).getClass();
+	private static final Class<?> standard = StandardBoard.class;
 
 	/**
 	 * An empty chess board.
 	 */
-	private static Class<?> empty = (new EmptyBoard()).getClass();
+	private static final Class<?> empty = EmptyBoard.class;
 
 	/**
 	 * Hidden constructor.

@@ -199,7 +199,7 @@ public class OptimizeGA implements GameListener {
 		conf.put("depth", (double) DEPTH);
 		String[] pieces = { "Pawn", "Knight", "Bishop", "Rook", "Queen", "King", "Chancellor", "Archbishop" };
 		for (String piece : pieces) {
-			Double v = rng.nextDouble() * PIECE_RANGE;
+			double v = rng.nextDouble() * PIECE_RANGE;
 			if ("King".equals(piece)) {
 				/* The king has a much larger value range. */
 				v *= PIECE_RANGE * PIECE_RANGE;
@@ -226,7 +226,7 @@ public class OptimizeGA implements GameListener {
 			if ("depth".equals(prop)) {
 				ave = DEPTH;
 			} else if (rng.nextDouble() < MUTATION_RATE) {
-				ave += (rng.nextDouble() * 1.0 / 2.0) * MUTATION_VAR;
+				ave += (rng.nextDouble() / 2.0) * MUTATION_VAR;
 				double max = PIECE_RANGE;
 				if ("King".equals(prop)) {
 					max = PIECE_RANGE * PIECE_RANGE * PIECE_RANGE;

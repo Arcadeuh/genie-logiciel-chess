@@ -9,6 +9,7 @@ import com.nullprogram.chess.models.boards.StandardBoard;
 import com.nullprogram.chess.controllers.BoardController;
 import com.nullprogram.chess.view.BoardView;
 
+import java.io.Serial;
 import java.util.logging.Logger;
 import javax.swing.JApplet;
 import javax.swing.JOptionPane;
@@ -24,7 +25,8 @@ public final class ChessApplet extends JApplet implements GameListener {
 	private static final Logger LOG = Logger.getLogger("com.nullprogram.chess.ChessApplet");
 
 	/** Version for object serialization. */
-	private static final long serialVersionUID = 34863129470926196L;
+	@Serial
+    private static final long serialVersionUID = 34863129470926196L;
 
 	@Override
 	public void init() {

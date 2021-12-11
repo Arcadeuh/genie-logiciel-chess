@@ -53,22 +53,22 @@ public class Minimax implements Player {
 	private final Executor executor = Executors.newFixedThreadPool(NTHREADS);
 
 	/** Values of each piece. */
-	private Map<Class<?>, Double> values;
+	private final Map<Class<?>, Double> values;
 
 	/** Divisor for milliseconds. */
 	static final double MILLI = 1000.0;
 
 	/** Maximum depth (configured). */
-	private int maxDepth;
+	private final int maxDepth;
 
 	/** Material score weight (configured). */
-	private double wMaterial;
+	private final double wMaterial;
 
 	/** King safety score weight (configured). */
-	private double wSafety;
+	private final double wSafety;
 
 	/** Mobility score weight (configured). */
-	private double wMobility;
+	private final double wMobility;
 
 	/** Name of the default mode for IA */
 	private static final String NAMEDEFAULTIA = "default";
@@ -101,22 +101,21 @@ public class Minimax implements Player {
 	public Minimax(final Game active, final Properties props) {
 		game = active;
 		values = new HashMap<>();
-		Properties config = props;
 
 		/* Piece values */
-		values.put((new Pawn(side)).getClass(), Double.parseDouble(config.getProperty("Pawn")));
-		values.put((new Knight(side)).getClass(), Double.parseDouble(config.getProperty("Knight")));
-		values.put((new Bishop(side)).getClass(), Double.parseDouble(config.getProperty("Bishop")));
-		values.put((new Rook(side)).getClass(), Double.parseDouble(config.getProperty("Rook")));
-		values.put((new Queen(side)).getClass(), Double.parseDouble(config.getProperty("Queen")));
-		values.put((new King(side)).getClass(), Double.parseDouble(config.getProperty("King")));
-		values.put((new Chancellor(side)).getClass(), Double.parseDouble(config.getProperty("Chancellor")));
-		values.put((new Archbishop(side)).getClass(), Double.parseDouble(config.getProperty("Archbishop")));
+		values.put(Pawn.class, Double.parseDouble(props.getProperty("Pawn")));
+		values.put(Knight.class, Double.parseDouble(props.getProperty("Knight")));
+		values.put(Bishop.class, Double.parseDouble(props.getProperty("Bishop")));
+		values.put(Rook.class, Double.parseDouble(props.getProperty("Rook")));
+		values.put(Queen.class, Double.parseDouble(props.getProperty("Queen")));
+		values.put(King.class, Double.parseDouble(props.getProperty("King")));
+		values.put(Chancellor.class, Double.parseDouble(props.getProperty("Chancellor")));
+		values.put(Archbishop.class, Double.parseDouble(props.getProperty("Archbishop")));
 
-		maxDepth = (int) Double.parseDouble(config.getProperty("depth"));
-		wMaterial = Double.parseDouble(config.getProperty("material"));
-		wSafety = Double.parseDouble(config.getProperty("safety"));
-		wMobility = Double.parseDouble(config.getProperty("mobility"));
+		maxDepth = (int) Double.parseDouble(props.getProperty("depth"));
+		wMaterial = Double.parseDouble(props.getProperty("material"));
+		wSafety = Double.parseDouble(props.getProperty("safety"));
+		wMobility = Double.parseDouble(props.getProperty("mobility"));
 	}
 
 	/**

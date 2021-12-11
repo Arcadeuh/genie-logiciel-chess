@@ -3,6 +3,8 @@ package com.nullprogram.chess.models;
 import com.nullprogram.chess.models.boards.BoardFactory;
 import com.nullprogram.chess.models.pieces.King;
 import com.nullprogram.chess.models.pieces.PieceFactory;
+
+import java.io.Serial;
 import java.io.Serializable;
 
 /**
@@ -15,7 +17,8 @@ import java.io.Serializable;
 public abstract class Board implements Serializable {
 
 	/** Versioning for object serialization. */
-	private static final long serialVersionUID = 244162996302362607L;
+	@Serial
+    private static final long serialVersionUID = 244162996302362607L;
 
 	/** The internal board array. */
 	private Piece[][] internalBoard;
