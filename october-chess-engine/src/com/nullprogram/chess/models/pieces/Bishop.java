@@ -6,32 +6,34 @@ import com.nullprogram.chess.models.Piece;
 import com.nullprogram.chess.models.Position;
 import com.nullprogram.chess.models.Side;
 
+import java.io.Serial;
+
 /**
  * The Chess bishop.
  *
- * This class describes the movement and capture behavior of the Chess
- * bishop.
+ * This class describes the movement and capture behavior of the Chess bishop.
  */
 public class Bishop extends Piece {
 
-    /** Serialization identifier. */
+	/** Serialization identifier. */
+	@Serial
     private static final long serialVersionUID = 292046969L;
 
-    /**
-     * Create bishop with given side.
-     *
-     * @param side piece side
-     */
-    public Bishop(final Side side) {
-        super(side, "Bishop");
-    }
+	/**
+	 * Create bishop with given side.
+	 *
+	 * @param side piece side
+	 */
+	public Bishop(final Side side) {
+		super(side, "Bishop");
+	}
 
-    @Override
-    public final MoveList getMoves(final boolean check) {
-        MoveList list = new MoveList(getBoard(), check);
-        list = getMoves(this, list);
-        return list;
-    }
+	@Override
+	public final MoveList getMoves(final boolean check) {
+		MoveList list = new MoveList(getBoard(), check);
+		list = getMoves(this, list);
+		return list;
+	}
 
     /**
      * Determine bishop moves for given situation.

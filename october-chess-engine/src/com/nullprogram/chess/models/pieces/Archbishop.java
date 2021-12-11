@@ -4,6 +4,8 @@ import com.nullprogram.chess.models.MoveList;
 import com.nullprogram.chess.models.Piece;
 import com.nullprogram.chess.models.Side;
 
+import java.io.Serial;
+
 /**
  * The Chess archbishop.
  *
@@ -12,24 +14,25 @@ import com.nullprogram.chess.models.Side;
  */
 public class Archbishop extends Piece {
 
-    /** Serialization identifier. */
-    private static final long serialVersionUID = -172677440L;
+	/** Serialization identifier. */
+	@Serial
+	private static final long serialVersionUID = -172677440L;
 
-    /**
-     * Create a new archbishop on the given side.
-     *
-     * @param side piece owner
-     */
-    public Archbishop(final Side side) {
-        super(side, "Archbishop");
-    }
+	/**
+	 * Create a new archbishop on the given side.
+	 *
+	 * @param side piece owner
+	 */
+	public Archbishop(final Side side) {
+		super(side, "Archbishop");
+	}
 
-    @Override
-    public final MoveList getMoves(final boolean check) {
-        MoveList list = new MoveList(getBoard(), check);
-        /* Take advantage of the Bishop and Knight implementations */
-        list = Bishop.getMoves(this, list);
-        list = Knight.getMoves(this, list);
-        return list;
-    }
+	@Override
+	public final MoveList getMoves(final boolean check) {
+		MoveList list = new MoveList(getBoard(), check);
+		/* Take advantage of the Bishop and Knight implementations */
+		list = Bishop.getMoves(this, list);
+		list = Knight.getMoves(this, list);
+		return list;
+	}
 }

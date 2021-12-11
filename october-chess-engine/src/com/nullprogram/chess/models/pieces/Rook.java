@@ -5,32 +5,34 @@ import com.nullprogram.chess.models.Piece;
 import com.nullprogram.chess.models.Position;
 import com.nullprogram.chess.models.Side;
 
+import java.io.Serial;
+
 /**
  * The Chess rook.
  *
- * This class describes the movement and capture behavior of the Chess
- * rook.
+ * This class describes the movement and capture behavior of the Chess rook.
  */
 public class Rook extends Piece {
 
-    /** Serialization identifier. */
+	/** Serialization identifier. */
+	@Serial
     private static final long serialVersionUID = 239867335L;
 
-    /**
-     * Create a new rook on the given side.
-     *
-     * @param side piece owner
-     */
-    public Rook(final Side side) {
-        super(side, "Rook");
-    }
+	/**
+	 * Create a new rook on the given side.
+	 *
+	 * @param side piece owner
+	 */
+	public Rook(final Side side) {
+		super(side, "Rook");
+	}
 
-    @Override
-    public final MoveList getMoves(final boolean check) {
-        MoveList list = new MoveList(getBoard(), check);
-        list = getMoves(this, list);
-        return list;
-    }
+	@Override
+	public final MoveList getMoves(final boolean check) {
+		MoveList list = new MoveList(getBoard(), check);
+		list = getMoves(this, list);
+		return list;
+	}
 
     /**
      * Determine rook moves for given situation.
