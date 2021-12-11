@@ -229,6 +229,12 @@ public class MoveList implements Iterable<Move>, Serializable {
      * @return true if everything have been done
      */
     public final boolean addPieceMove(Position orig, Position dest) {
-    	return this.addCapture(new Move(orig, dest)) && Boolean.TRUE.equals(board.isFree(dest));
+    	if(!this.addCapture(new Move(orig, dest))) {
+    		return false;
+    	}
+    	if(!board.isFree(dest)) {
+    		return false;
+    	}
+    	return true;
     }
 }

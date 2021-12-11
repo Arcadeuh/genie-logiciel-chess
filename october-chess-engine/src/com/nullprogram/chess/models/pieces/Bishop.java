@@ -1,5 +1,6 @@
 package com.nullprogram.chess.models.pieces;
 
+import com.nullprogram.chess.models.Move;
 import com.nullprogram.chess.models.MoveList;
 import com.nullprogram.chess.models.Piece;
 import com.nullprogram.chess.models.Position;
@@ -51,9 +52,9 @@ public class Bishop extends Piece {
             x--;
             y--;
             Position pos = new Position(x, y);
-            if (list.addPieceMove(home,pos)) {
-                break;
-            }
+            if(!list.addPieceMove(home,pos)) {
+        		break;
+        	}
         }
         x = home.getX();
         y = home.getY();
@@ -63,9 +64,9 @@ public class Bishop extends Piece {
             x++;
             y++;
             Position pos = new Position(x, y);
-            if (list.addPieceMove(home,pos)) {
-                break;
-            }
+            if(!list.addPieceMove(home,pos)) {
+        		break;
+        	}
         }
         x = home.getX();
         y = home.getY();
@@ -73,9 +74,9 @@ public class Bishop extends Piece {
             x--;
             y++;
             Position pos = new Position(x, y);
-            if (list.addPieceMove(home,pos)) {
-                break;
-            }
+            if(!list.addPieceMove(home,pos)) {
+        		break;
+        	}
         }
         x = home.getX();
         y = home.getY();
@@ -83,9 +84,9 @@ public class Bishop extends Piece {
             x++;
             y--;
             Position pos = new Position(x, y);
-            if (list.addPieceMove(home,pos)) {
-                break;
-            }
+            if(!list.addPieceMove(home,pos)) {
+        		break;
+        	}
         }
         return list;
     }
